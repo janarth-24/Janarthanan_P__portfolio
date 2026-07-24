@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 import FrozenBackground from "@/components/FrozenBackground";
@@ -22,23 +22,28 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const dancingScript = Dancing_Script({
+  variable: "--font-dancing-script",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
-  title: "Txema Albero — Software Engineer & Tech Lead",
+  title: "Janarthanan P — Software Developer",
   description:
-    "Portfolio inmersivo de Txema Albero — Software Engineer / Tech Lead. Experiencias web 3D con Next.js y React Three Fiber.",
-  authors: [{ name: "Txema Albero" }],
+    "Immersive 3D Portfolio of Janarthanan P — Software Developer. Built with Next.js and React Three Fiber.",
+  authors: [{ name: "Janarthanan P" }],
   openGraph: {
-    title: "Txema Albero — Software Engineer & Tech Lead",
+    title: "Janarthanan P — Software Developer",
     description:
-      "Portfolio inmersivo con escena 3D interactiva. Next.js, React Three Fiber, GLSL.",
+      "Immersive 3D Portfolio of Janarthanan P.",
     type: "website",
-    locale: "es_ES",
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Txema Albero — Software Engineer & Tech Lead",
+    title: "Janarthanan P — Software Developer",
     description:
-      "Portfolio inmersivo con escena 3D interactiva. Next.js, React Three Fiber, GLSL.",
+      "Immersive 3D Portfolio of Janarthanan P.",
   },
 };
 
@@ -54,8 +59,8 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} ${dancingScript.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>

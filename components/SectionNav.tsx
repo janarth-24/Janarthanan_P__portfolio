@@ -14,24 +14,30 @@ export default function SectionNav() {
 
   const SECTIONS = [
     { id: "hero", label: t("nav.home") },
+    { id: "about", label: t("nav.about") },
     { id: "stack", label: t("nav.stack") },
     { id: "experience", label: t("nav.experience") },
     { id: "project1", label: `${t("nav.project")} 01` },
     { id: "project2", label: `${t("nav.project")} 02` },
     { id: "project3", label: `${t("nav.project")} 03` },
     { id: "project4", label: `${t("nav.project")} 04` },
+    { id: "education", label: t("nav.education") },
+    { id: "publications", label: t("nav.publications") },
     { id: "contact", label: t("nav.contact") },
   ];
 
   useEffect(() => {
     const ids = [
       "hero",
+      "about",
       "stack",
       "experience",
       "project1",
       "project2",
       "project3",
       "project4",
+      "education",
+      "publications",
       "contact",
     ];
     const els = ids.map((id) =>

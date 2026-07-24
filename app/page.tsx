@@ -7,7 +7,7 @@ import Reveal from "@/components/Reveal";
 import SectionNav from "@/components/SectionNav";
 import CopyEmail from "@/components/CopyEmail";
 import SeasonPicker from "@/components/SeasonPicker";
-import LanguagePicker from "@/components/LanguagePicker";
+import LoadingScreen from "@/components/LoadingScreen";
 import ProjectModal, {
   type ProjectDetail,
 } from "@/components/ProjectModal";
@@ -16,7 +16,7 @@ import { useIsMobile } from "@/lib/useIsMobile";
 import { SKILLS_FLAT } from "@/lib/skills";
 import type { Lang } from "@/lib/i18n";
 
-const EMAIL = "josemariaalberobelamendia@gmail.com";
+const EMAIL = "janarthanangp24@gmail.com";
 
 // Localised content lives in `{ es, en }` objects inside these arrays so the
 // page can be a straightforward array.map() at render time. Tech names stay
@@ -32,147 +32,79 @@ const projects: Project[] = [
   {
     num: "01",
     name: {
-      es: "Contestador IA de Reseñas Google",
-      en: "AI Responder for Google Reviews",
+      es: "Detección de Enfermedades en Plantas de Tomate",
+      en: "Tomato Plant Disease Detection",
     },
     stack: [
-      "Next.js",
-      "FastAPI",
       "Python",
-      "PostgreSQL",
-      "Supabase",
-      "Claude API",
-      "Stripe",
-      "Celery",
+      "TensorFlow",
+      "OpenCV",
+      "Flask",
+      "HTML",
+      "CSS",
+      "JavaScript",
     ],
     desc: {
-      es: "SaaS que genera respuestas personalizadas a reseñas de Google Business Profile con IA, manteniendo el tono de la marca.",
-      en: "SaaS that generates personalised replies to Google Business Profile reviews with AI while keeping the brand tone.",
+      es: "Modelo de deep learning para identificar múltiples enfermedades y predecir la pérdida de rendimiento.",
+      en: "Deep learning model to identify multiple diseases and predict yield loss severity.",
     },
     details: {
-      es: "Plataforma orientada a negocios locales en España para gestionar sus reseñas de Google Business Profile. El sistema hace polling cada 15 minutos, llama a Claude para generar respuestas alineadas con el tono de marca y las publica automáticamente (o las manda a revisión). Incluye Stripe con suscripciones y Customer Portal, autenticación con Google OAuth + PKCE, alertas por email/SMS para reseñas negativas y un dashboard con métricas.",
-      en: "A platform for local businesses in Spain to manage their Google Business Profile reviews. The system polls every 15 minutes, uses Claude to draft replies in the brand's tone and publishes them automatically (or sends them to review). Stripe handles subscriptions and Customer Portal, auth is Google OAuth with PKCE, and negative reviews fire email/SMS alerts. Dashboard with metrics included.",
+      es: "Entrené un modelo de deep learning con imágenes de hojas de tomate para identificar múltiples enfermedades de plantas con alta precisión. Implementé un módulo de predicción de pérdida de rendimiento que estima la pérdida de producción basada en la severidad detectada, e integré el modelo con un backend en Flask para predicciones en tiempo real.",
+      en: "Trained a deep learning model on tomato leaf images to identify multiple plant diseases with high prediction accuracy. Implemented a yield loss prediction module that estimates crop production loss based on the detected disease severity. Integrated the trained machine learning model with a Flask backend for real-time predictions.",
     },
-    url: "https://revio.txemaalbero.com/",
-    media: [
-      "/projects/revio/landing.png",
-      "/projects/revio/dashboard.png",
-      "/projects/revio/alertas.png",
-      "/projects/revio/analiticas.png",
-      "/projects/revio/negocios.png",
-      "/projects/revio/analiticas-ia.png",
-    ],
-    highlights: ["nextdotjs", "tailwindcss", "python", "postgresql"],
+    highlights: ["python", "javascript", "html5", "css"],
     align: "left",
     section: "project1",
   },
   {
     num: "02",
     name: {
-      es: "Control de Temperaturas APPCC",
-      en: "HACCP Temperature Control",
+      es: "NeuraLingua",
+      en: "NeuraLingua",
     },
     stack: [
-      "Next.js 16",
-      "FastAPI",
+      "React.js",
+      "Flask",
       "Python",
       "PostgreSQL",
-      "Supabase",
-      "Claude API",
-      "Stripe",
-      "Celery",
+      "SQLite",
+      "JavaScript",
     ],
     desc: {
-      es: "App para restaurantes que digitaliza el registro de temperaturas APPCC y genera planes e informes automáticos para inspecciones sanitarias.",
-      en: "App for restaurants that digitises HACCP temperature logs and auto-generates plans and reports for food safety inspections.",
+      es: "Plataforma de aprendizaje de inglés impulsada por IA con módulos interactivos.",
+      en: "AI-Powered English Learning Platform featuring interactive modules.",
     },
     details: {
-      es: "Digitaliza el control APPCC completo de un restaurante: registros de temperatura, trazabilidad, alérgenos y generación asistida por IA de los planes HACCP. Integración con Open Food Facts para importar alérgenos, MFA en la autenticación, multi-idioma con next-intl y pagos por suscripción con Stripe. Backend 100% async con FastAPI + SQLAlchemy y tareas en Celery.",
-      en: "Full HACCP digitisation for a restaurant: temperature logs, traceability, allergens, and AI-assisted generation of HACCP plans. Integrates with Open Food Facts for allergens, MFA-protected auth, i18n with next-intl, subscription billing with Stripe. Fully async backend with FastAPI + SQLAlchemy and Celery workers.",
+      es: "Contribuí al desarrollo de una plataforma de aprendizaje de inglés con IA, con módulos interactivos de Gramática, Escucha, Habla, Lectura, Escritura y Pensamiento Crítico. Desarrollé el frontend y backend usando React.js y Flask, asegurando una integración perfecta mediante APIs REST.",
+      en: "Contributed to the development of an AI-powered English learning platform featuring interactive modules for Grammar, Listening, Speaking, Reading, Writing, Vocabulary, and Critical Thinking. Developed both frontend and backend functionalities using React.js and Flask, ensuring seamless integration between the user interface and REST APIs.",
     },
-    url: "https://aptia.txemaalbero.com/",
-    media: [
-      "/projects/aptia/landing.png",
-      "/projects/aptia/panel.png",
-      "/projects/aptia/registros.png",
-      "/projects/aptia/carta-alergenos.png",
-      "/projects/aptia/inspeccion.png",
-      "/projects/aptia/cuestionario.png",
-    ],
-    highlights: ["nextdotjs", "tailwindcss", "python", "postgresql", "typescript"],
-    badge: { es: "En desarrollo", en: "In progress" },
+    highlights: ["react", "python", "postgresql", "javascript"],
     align: "right",
     section: "project2",
   },
   {
     num: "03",
     name: {
-      es: "Gestor de Finanzas Personales",
-      en: "Personal Finance Tracker",
+      es: "Sitio Web Master SK Academy",
+      en: "Master SK Academy Website",
     },
     stack: [
-      "Django",
-      "Python",
-      "SQLite",
-      "HTML5",
-      "CSS3",
+      "HTML",
+      "CSS",
       "JavaScript",
-      "Chart.js",
-      "pandas",
+      "Bootstrap",
     ],
     desc: {
-      es: "Dashboard para seguimiento de ingresos, gastos y objetivos de ahorro con visualizaciones gráficas, importación desde Excel e informes mensuales.",
-      en: "Dashboard to track income, expenses and savings goals with visual charts, Excel import and monthly reports.",
+      es: "Sitio web educativo responsive para Master SK Academy con interfaz profesional.",
+      en: "Responsive educational website for Master SK Academy with a professional UI.",
     },
     details: {
-      es: "Aplicación Django clásica (MVT) para finanzas personales: categorización de gastos, objetivos de ahorro, importación masiva desde Excel (xlsx/xls) y gráficos con Chart.js. Temas claro/oscuro hechos con CSS puro y sin dependencias frontend. Un proyecto que prioriza simplicidad y robustez: sin frameworks en el cliente, autenticación nativa de Django, base de datos SQLite.",
-      en: "Classic Django (MVT) app for personal finance: expense categorisation, savings goals, bulk import from Excel (xlsx/xls) and Chart.js-powered graphs. Light/dark themes in pure CSS with zero frontend dependencies. A project that favours simplicity and robustness: no client framework, Django's built-in auth, SQLite storage.",
+      es: "Desarrollé un sitio web educativo responsive para Master SK Academy, Vellore, usando HTML, CSS, JavaScript y Bootstrap. El sitio muestra listas de cursos, información académica y detalles de contacto con una interfaz de usuario limpia y profesional, optimizada para todos los dispositivos.",
+      en: "Developed a responsive educational website for Master SK Academy, Vellore, using HTML, CSS, JavaScript, and Bootstrap. The website showcases course listings, academic information, and contact details with a clean and professional user interface, optimized for all devices.",
     },
-    github: "https://github.com/Txemalon/Gestor-de-gastos-personales",
-    media: [
-      "/projects/gestor-gastos/dashboard.png",
-      "/projects/gestor-gastos/wallets.png",
-      "/projects/gestor-gastos/transacciones.png",
-      "/projects/gestor-gastos/categorias.png",
-      "/projects/gestor-gastos/reportes.png",
-      "/projects/gestor-gastos/inversiones.png",
-    ],
-    highlights: ["python", "javascript", "html5", "css"],
+    highlights: ["html5", "css", "javascript"],
     align: "left",
     section: "project3",
-  },
-  {
-    num: "04",
-    name: {
-      es: "Tienda online de dianas",
-      en: "Dartboards e-commerce",
-    },
-    stack: [
-      "Next.js 15",
-      "React",
-      "TypeScript",
-      "Prisma",
-      "PostgreSQL",
-      "NextAuth",
-      "Stripe",
-      "Framer Motion",
-    ],
-    desc: {
-      es: "E-commerce moderno para venta de dianas con pagos integrados, autenticación social, panel de administración y animaciones fluidas.",
-      en: "Modern e-commerce for dartboards with integrated payments, social auth, an admin panel and smooth animations.",
-    },
-    details: {
-      es: "Tienda online completa con catálogo, carrito y checkout con Stripe. NextAuth con Google OAuth y credenciales, rate limiting con Upstash Redis, validación con Zod y un panel de administración separado (AdminJS sobre Express, puerto 3001). Transiciones y microinteracciones con Framer Motion para darle un acabado más premium que una tienda al uso.",
-      en: "A full e-commerce with catalogue, cart and Stripe checkout. NextAuth with Google OAuth and credentials, Upstash Redis for rate limiting, Zod validation, and a separate admin panel (AdminJS on Express, port 3001). Framer Motion powers transitions and micro-interactions for a more premium feel than a typical shop.",
-    },
-    media: [
-      "/projects/dianas/packs.png",
-      "/projects/dianas/catalogo.png",
-    ],
-    highlights: ["nextdotjs", "react", "typescript", "tailwindcss", "postgresql"],
-    badge: { es: "En construcción", en: "Under construction" },
-    align: "right",
-    section: "project4",
   },
 ];
 
@@ -184,40 +116,164 @@ const experiences: Array<{
   summary: Localised;
   bullets: Localised[];
   stack: string[];
+  certificates?: Array<{ label: Localised; url: string }>;
 }> = [
   {
-    role: { es: "Tech Lead", en: "Tech Lead" },
-    company: "Activalink",
-    period: { es: "2023 — Presente", en: "2023 — Present" },
-    location: { es: "Alcoy, España", en: "Alcoy, Spain" },
+    role: { es: "Flutter Developer Intern", en: "Flutter Developer Intern" },
+    company: "Starvik Solution Pvt Ltd",
+    period: { es: "Junio 2026 — Julio 2026", en: "June 2026 — July 2026" },
+    location: { es: "Vellore, India", en: "Vellore, India" },
     summary: {
-      es: "Activalink implementa y adapta ERPs para pymes y grandes empresas. Desarrollo módulos y personalizaciones custom sobre Odoo, integraciones a medida y proyectos de implantación llave en mano. Lidero un equipo de 3 desarrolladores: nuestro trabajo se mide en tiempo ahorrado y errores evitados.",
-      en: "Activalink implements and customises ERPs for SMBs and large companies. I build custom modules and personalisations on top of Odoo, bespoke integrations, and end-to-end implementation projects. I lead a team of 3 developers: our work is measured in time saved and errors avoided.",
+      es: "Desarrollo de aplicaciones móviles multiplataforma usando Flutter y Dart.",
+      en: "Developed cross-platform mobile applications using Flutter and Dart for Android and iOS.",
     },
     bullets: [
       {
-        es: "OCR de facturas en Odoo — de 4 h/día a 30 min (−87 %).",
-        en: "Invoice OCR in Odoo — from 4 h/day down to 30 min (−87 %).",
+        es: "Diseñé e implementé interfaces de usuario responsivas siguiendo Material Design.",
+        en: "Designed and implemented responsive user interfaces following Material Design principles.",
       },
       {
-        es: "Logística con mapa interactivo — −60 % errores de seguimiento.",
-        en: "Interactive logistics map — −60 % tracking errors.",
-      },
-      {
-        es: "Conciliación automática — cierre contable de 3 días a medio día.",
-        en: "Automated reconciliation — monthly close from 3 days to half a day.",
-      },
-      {
-        es: "Dashboards financieros — detección temprana de facturas sin emitir.",
-        en: "Financial dashboards — early detection of uninvoiced orders.",
+        es: "Integré APIs REST y servicios de Firebase, incluyendo Autenticación y Cloud Firestore.",
+        en: "Integrated REST APIs and Firebase services, including Authentication and Cloud Firestore.",
       },
     ],
-    stack: ["Odoo", "Python", "PostgreSQL", "Next.js", "TypeScript", "Docker"],
+    stack: ["Flutter", "Dart", "Firebase", "REST APIs"],
+    certificates: [
+      {
+        label: { es: "Ver Certificado", en: "View Certificate" },
+        url: "https://drive.google.com/file/d/1vKZOhTlWNUED2uZn-hiZbyHcxECY89ac/view?usp=sharing",
+      }
+    ],
+  },
+  {
+    role: { es: "Full Stack Developer Intern", en: "Full Stack Developer Intern" },
+    company: "NeuraGlobal",
+    period: { es: "Febrero 2026 — Marzo 2026", en: "February 2026 — March 2026" },
+    location: { es: "Vellore, India", en: "Vellore, India" },
+    summary: {
+      es: "Contribuí al desarrollo de Lingua AI, una plataforma de aprendizaje de idiomas basada en IA.",
+      en: "Contributed to the development of Lingua AI, an AI-powered language learning platform by developing both frontend and backend features.",
+    },
+    bullets: [
+      {
+        es: "Desarrollé e integré módulos backend, APIs REST y bases de datos.",
+        en: "Developed and integrated backend modules, REST APIs, and database operations.",
+      },
+      {
+        es: "Colaboré para conectar los componentes frontend con los servicios backend.",
+        en: "Collaborated with cross-functional teams to connect frontend components with backend services.",
+      },
+    ],
+    stack: ["React", "Python", "REST APIs", "SQL"],
+    certificates: [
+      {
+        label: { es: "Certificado de Experiencia", en: "Work Experience Certificate" },
+        url: "https://drive.google.com/file/d/12RAcERrRLzKnFxccdTjIxlwUYuCJn8og/view?usp=sharing",
+      },
+      {
+        label: { es: "Certificado de Pasantía", en: "Internship Certificate" },
+        url: "https://drive.google.com/file/d/1Ck1yDUHHw-_tdB0_rtUbTGv1TID-avZX/view?usp=sharing",
+      }
+    ],
+  },
+  {
+    role: { es: "AI & Cloud Intern", en: "AI & Cloud Intern" },
+    company: "Edunet Foundation",
+    period: { es: "Junio 2025 — Julio 2025", en: "June 2025 — July 2025" },
+    location: { es: "Remoto", en: "Remote" },
+    summary: {
+      es: "Pasantía intensiva de 4 semanas sobre Inteligencia Artificial y Tecnologías Cloud.",
+      en: "4-week internship focused on Artificial Intelligence and IBM Cloud Technologies.",
+    },
+    bullets: [
+      {
+        es: "Apliqué conceptos de machine learning y fundamentos de cloud para construir soluciones IA.",
+        en: "Applied machine learning concepts and cloud computing fundamentals to build AI-based solutions.",
+      },
+      {
+        es: "Experiencia práctica con flujos de IA, análisis de datos y desarrollo de aplicaciones.",
+        en: "Gained hands-on experience with AI workflows, data analysis, and cloud-based app development.",
+      },
+    ],
+    stack: ["AI", "IBM Cloud", "Python", "Machine Learning"],
+    certificates: [
+      {
+        label: { es: "Ver Certificado", en: "View Certificate" },
+        url: "https://drive.google.com/file/d/1k1cUnhRpOLbEhJC49ClVrAxweFuF4vdX/view?usp=sharing",
+      }
+    ],
+  },
+];
+
+const education: Array<{
+  role: Localised;
+  company: string;
+  period: Localised;
+  location: Localised;
+  summary: Localised;
+  bullets: Localised[];
+  stack: string[];
+}> = [
+  {
+    role: { es: "Bachelor of Engineering (B.E.) – CSE", en: "Bachelor of Engineering (B.E.) – CSE" },
+    company: "Annai Mira College of Engineering and Technology",
+    period: { es: "2023 — 2027", en: "2023 — 2027" },
+    location: { es: "Anna University", en: "Anna University" },
+    summary: {
+      es: "CGPA: 8.445/10",
+      en: "CGPA: 8.445/10",
+    },
+    bullets: [],
+    stack: [],
+  },
+  {
+    role: { es: "Higher Secondary (Class XII)", en: "Higher Secondary (Class XII)" },
+    company: "Dr. Natarajan Matric Hr. Sec. School",
+    period: { es: "2023", en: "2023" },
+    location: { es: "State Board", en: "State Board" },
+    summary: {
+      es: "Score: 80.5 %",
+      en: "Score: 80.5 %",
+    },
+    bullets: [],
+    stack: [],
+  },
+];
+
+const publications: Array<{
+  role: Localised;
+  company: string;
+  period: Localised;
+  location: Localised;
+  summary: Localised;
+  bullets: Localised[];
+  stack: string[];
+}> = [
+  {
+    role: { es: "A Comprehensive Study of AI Applications in Kidney Disease", en: "A Comprehensive Study of AI Applications in Kidney Disease" },
+    company: "ICCIS 3.0",
+    period: { es: "Septiembre 2025", en: "September 2025" },
+    location: { es: "Chennai, India", en: "Chennai, India" },
+    summary: {
+      es: "Published in the Proceedings of the Third International Conference on Cyber & Information Security (ICCIS 3.0).",
+      en: "Published in the Proceedings of the Third International Conference on Cyber & Information Security (ICCIS 3.0).",
+    },
+    bullets: [
+      {
+        es: "Organized by the PG Department of Data Science, Dwaraka Doss Goverdhan Doss Vaishnav College.",
+        en: "Organized by the PG Department of Data Science, Dwaraka Doss Goverdhan Doss Vaishnav College.",
+      },
+      {
+        es: "ISBN: 978-93-94412-34-7",
+        en: "ISBN: 978-93-94412-34-7",
+      }
+    ],
+    stack: ["Artificial Intelligence", "Research", "Healthcare"],
   },
 ];
 
 function pick<T>(loc: { es: T; en: T }, lang: Lang): T {
-  return loc[lang];
+  return loc.en;
 }
 
 // Hero name split per word so each can rise independently. Whitespace
@@ -242,9 +298,12 @@ export default function Home() {
   const { t, lang } = useLanguage();
   const isMobile = useIsMobile();
   const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [loadingComplete, setLoadingComplete] = useState(false);
 
   return (
-    <SmoothScroll>
+    <>
+      <LoadingScreen onComplete={() => setLoadingComplete(true)} />
+      <SmoothScroll>
       <div className="relative">
         {/* Desktop: persistent 3D scene fullscreen behind content. On mobile
             the canvas lives inside the hero instead (see below) so it scrolls
@@ -262,7 +321,7 @@ export default function Home() {
               data-cursor="hover"
               className="text-sm font-semibold tracking-tight text-ice-100 whitespace-nowrap"
             >
-              Txema Albero
+              Janarthanan P
             </span>
             {/* Wrapper (not the pill itself) carries the hide: .status-pill
                 hard-sets display:inline-flex, which beats Tailwind's .hidden
@@ -287,7 +346,6 @@ export default function Home() {
               <span>GitHub</span>
             </a>
             </span>
-            <LanguagePicker />
           </div>
         </header>
 
@@ -313,10 +371,8 @@ export default function Home() {
               >
                 {t("hero.greeting")}
               </p>
-              <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[8.5rem] font-bold tracking-[-0.03em] text-ice-50 leading-[0.92] whitespace-nowrap">
-                <HeroWord text="Txema" delay={120} />
-                <br />
-                <HeroWord text="Albero" delay={260} className="text-ice-400" />
+              <h1 className="text-[14vw] md:text-[10vw] lg:text-[7.5vw] font-bold tracking-[-0.03em] text-ice-50 leading-[0.92] mt-4 mb-2">
+                <HeroWord text="Janarthanan P" delay={120} />
               </h1>
               <p
                 className="mt-8 text-base sm:text-lg md:text-xl text-ice-200 max-w-xl leading-relaxed fade-in-up"
@@ -366,7 +422,7 @@ export default function Home() {
                     so desktop keeps everything on a single line. */}
                 <div className="basis-full h-0 md:hidden" aria-hidden />
                 <a
-                  href="https://es.linkedin.com/in/jose-mar%C3%ADa-albero-belamendia-b9319a246"
+                  href="https://www.linkedin.com/in/janarthanan-p-/"
                   target="_blank"
                   rel="noopener noreferrer"
                   data-cursor="hover"
@@ -379,7 +435,7 @@ export default function Home() {
                   </svg>
                 </a>
                 <a
-                  href="https://github.com/Txemalon"
+                  href="https://github.com/janarth-24"
                   target="_blank"
                   rel="noopener noreferrer"
                   data-cursor="hover"
@@ -406,6 +462,52 @@ export default function Home() {
               <span className="text-[11px] uppercase tracking-[0.25em] text-ice-400 hidden sm:inline">
                 {t("hero.keysHint")}
               </span>
+            </div>
+          </section>
+
+          {/* About */}
+          <section
+            data-kb-section="about"
+            className="relative py-24 md:min-h-screen flex flex-col justify-center p-6 sm:p-10 md:p-14 overflow-hidden"
+          >
+            <div className="max-w-5xl relative mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16">
+              <div className="flex-1 text-center md:text-left">
+                <Reveal>
+                  <p className="font-mono text-sm text-ice-400 mb-3">
+                    {t("about.subtitle")}
+                  </p>
+                </Reveal>
+                <Reveal delay={80}>
+                  <h2 className="text-4xl sm:text-6xl font-semibold tracking-tight text-ice-50 mb-6">
+                    {t("about.title")}
+                  </h2>
+                </Reveal>
+                <Reveal delay={160}>
+                  <p className="text-ice-200 text-lg leading-relaxed mb-4">
+                    {t("about.body1")}
+                  </p>
+                  <p className="text-ice-200 text-lg leading-relaxed mb-4">
+                    {t("about.body2")}
+                  </p>
+                  <p className="text-ice-200 text-lg leading-relaxed mb-4">
+                    {t("about.body3")}
+                  </p>
+                  <p className="text-ice-200 text-lg leading-relaxed mb-6 md:mb-10">
+                    {t("about.body4")}
+                  </p>
+                </Reveal>
+              </div>
+              
+              <Reveal delay={240} className="flex-none">
+                <div className="relative w-56 sm:w-64 md:w-72 lg:w-80 aspect-[3/4] rounded-2xl overflow-hidden border-2 border-ice-700/30 shadow-[0_0_40px_rgba(234,242,251,0.1)] pointer-events-auto group">
+                  <div className="absolute inset-0 bg-ice-500/20 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500 z-10"></div>
+                  <img
+                    src="/profile.png"
+                    alt="Janarthanan P"
+                    className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
+                  />
+                </div>
+              </Reveal>
             </div>
           </section>
 
@@ -542,6 +644,30 @@ export default function Home() {
                       </span>
                     ))}
                   </div>
+                  
+                  {exp.certificates && exp.certificates.length > 0 && (
+                    <div className="mt-6 pointer-events-auto flex flex-wrap gap-3">
+                      {exp.certificates.map((cert, i) => (
+                        <a
+                          key={i}
+                          href={cert.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          data-cursor="hover"
+                          className="frost-btn frost-btn--primary !py-2 !px-4 text-xs font-medium inline-flex items-center gap-2"
+                        >
+                          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                          </svg>
+                          {pick(cert.label, lang)}
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </Reveal>
               ))}
             </div>
@@ -651,71 +777,252 @@ export default function Home() {
             </section>
           ))}
 
-          {/* Contact — copy pinned to the left so the (large, hero-posed)
-              keyboard on the right has room to bob its random keys. */}
+          {/* Education */}
           <section
-            data-kb-section="contact"
-            className="relative py-24 md:min-h-screen flex flex-col justify-center p-6 sm:p-10 md:p-14 overflow-hidden"
+            data-kb-section="education"
+            className="relative p-6 sm:p-10 md:p-14 pb-24"
           >
-            <div className="max-w-xl relative">
+            <div className="sticky top-24 sm:top-28 text-center mb-12 sm:mb-16 z-0">
               <Reveal>
-                <p className="font-mono text-sm text-ice-400 mb-3">
-                  {t("contact.kicker")}
-                </p>
-              </Reveal>
-              <Reveal delay={80}>
-                <h2 className="text-4xl sm:text-6xl font-semibold tracking-tight text-ice-50 mb-6">
-                  {t("contact.title")}
+                <h2 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-[-0.03em] text-ice-50 leading-[0.95]">
+                  {t("education.title")}
                 </h2>
               </Reveal>
-              <Reveal delay={160}>
-                <p className="text-ice-200 mb-10">{t("contact.body")}</p>
-              </Reveal>
-              <Reveal delay={240}>
-                <div className="flex flex-wrap gap-3 pointer-events-auto">
-                  <CopyEmail
-                    email={EMAIL}
-                    className="frost-btn frost-btn--primary"
-                  >
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-                      <rect x="3" y="5" width="18" height="14" rx="2" />
-                      <path d="M3 7l9 6 9-6" />
-                    </svg>
-                    {t("contact.copyEmail")}
-                  </CopyEmail>
-                  <a
-                    href={`mailto:${EMAIL}`}
-                    data-cursor="hover"
-                    className="frost-btn"
-                  >
-                    {t("contact.openMail")}
-                  </a>
-                  <a
-                    href="https://github.com/Txemalon"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-cursor="hover"
-                    className="frost-btn"
-                  >
-                    {t("contact.github")}
-                  </a>
-                  <a
-                    href="https://es.linkedin.com/in/jose-mar%C3%ADa-albero-belamendia-b9319a246"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-cursor="hover"
-                    className="frost-btn"
-                  >
-                    {t("contact.linkedin")}
-                  </a>
-                </div>
+              <Reveal delay={120}>
+                <p className="mt-3 text-sm sm:text-base text-ice-300">
+                  {t("education.subtitle")}
+                </p>
               </Reveal>
             </div>
-            <Reveal delay={320}>
-              <p className="mt-14 text-[11px] uppercase tracking-[0.25em] text-ice-400">
-                {t("contact.footer")}
-              </p>
-            </Reveal>
+
+            <div className="relative z-10 max-w-3xl mx-auto space-y-6">
+              {education.map((exp, idx) => (
+                <Reveal
+                  key={`${exp.company}-${idx}`}
+                  delay={idx * 120}
+                  as="article"
+                  className="relative rounded-2xl bg-ink-1/75 backdrop-blur-md border border-ink-3 p-6 sm:p-8 md:p-10 pointer-events-auto shadow-[0_8px_40px_-20px_rgba(0,0,0,0.6)]"
+                >
+                  <header className="flex flex-wrap items-start justify-between gap-3 mb-5">
+                    <div>
+                      <h3 className="text-2xl sm:text-3xl font-bold text-ice-50 tracking-tight">
+                        {pick(exp.role, lang)}
+                      </h3>
+                      <p className="text-ice-400 font-medium mt-1">
+                        {exp.company}
+                        <span className="text-ice-500/80 font-normal">
+                          {" · "}
+                          {pick(exp.location, lang)}
+                        </span>
+                      </p>
+                    </div>
+                    <span className="font-mono text-xs text-ice-100 px-3 py-1 rounded-full border border-ice-700/70 bg-ink-2/60 whitespace-nowrap">
+                      {pick(exp.period, lang)}
+                    </span>
+                  </header>
+
+                  <p className="text-ice-200 leading-relaxed mb-5">
+                    {pick(exp.summary, lang)}
+                  </p>
+
+                  {exp.bullets.length > 0 && (
+                    <ul className="space-y-2.5 mb-6">
+                      {exp.bullets.map((b, i) => (
+                        <li
+                          key={i}
+                          className="flex gap-3 text-ice-100 leading-relaxed"
+                        >
+                          <span className="mt-[0.65em] flex-none w-1.5 h-1.5 rounded-full bg-ice-400" />
+                          <span>{pick(b, lang)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {exp.stack.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5">
+                      {exp.stack.map((s) => (
+                        <span
+                          key={s}
+                          data-cursor="hover"
+                          className="frost-chip"
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </Reveal>
+              ))}
+            </div>
+          </section>
+
+          {/* Publications */}
+          <section
+            data-kb-section="publications"
+            className="relative p-6 sm:p-10 md:p-14 pb-24"
+          >
+            <div className="sticky top-24 sm:top-28 text-center mb-12 sm:mb-16 z-0">
+              <Reveal>
+                <h2 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-[-0.03em] text-ice-50 leading-[0.95]">
+                  {t("publications.title")}
+                </h2>
+              </Reveal>
+              <Reveal delay={120}>
+                <p className="mt-3 text-sm sm:text-base text-ice-300">
+                  {t("publications.subtitle")}
+                </p>
+              </Reveal>
+            </div>
+
+            <div className="relative z-10 max-w-3xl mx-auto space-y-6">
+              {publications.map((exp, idx) => (
+                <Reveal
+                  key={`${exp.company}-${idx}`}
+                  delay={idx * 120}
+                  as="article"
+                  className="relative rounded-2xl bg-ink-1/75 backdrop-blur-md border border-ink-3 p-6 sm:p-8 md:p-10 pointer-events-auto shadow-[0_8px_40px_-20px_rgba(0,0,0,0.6)]"
+                >
+                  <header className="flex flex-wrap items-start justify-between gap-3 mb-5">
+                    <div>
+                      <h3 className="text-2xl sm:text-3xl font-bold text-ice-50 tracking-tight">
+                        {pick(exp.role, lang)}
+                      </h3>
+                      <p className="text-ice-400 font-medium mt-1">
+                        {exp.company}
+                        <span className="text-ice-500/80 font-normal">
+                          {" · "}
+                          {pick(exp.location, lang)}
+                        </span>
+                      </p>
+                    </div>
+                    <span className="font-mono text-xs text-ice-100 px-3 py-1 rounded-full border border-ice-700/70 bg-ink-2/60 whitespace-nowrap">
+                      {pick(exp.period, lang)}
+                    </span>
+                  </header>
+
+                  <p className="text-ice-200 leading-relaxed mb-5">
+                    {pick(exp.summary, lang)}
+                  </p>
+
+                  {exp.bullets.length > 0 && (
+                    <ul className="space-y-2.5 mb-6">
+                      {exp.bullets.map((b, i) => (
+                        <li
+                          key={i}
+                          className="flex gap-3 text-ice-100 leading-relaxed"
+                        >
+                          <span className="mt-[0.65em] flex-none w-1.5 h-1.5 rounded-full bg-ice-400" />
+                          <span>{pick(b, lang)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {exp.stack.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5">
+                      {exp.stack.map((s) => (
+                        <span
+                          key={s}
+                          data-cursor="hover"
+                          className="frost-chip"
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </Reveal>
+              ))}
+            </div>
+          </section>
+
+          {/* Contact */}
+          <section
+            data-kb-section="contact"
+            className="relative py-24 md:min-h-screen flex flex-col items-center justify-center p-6 sm:p-10 md:p-14 overflow-hidden pointer-events-auto"
+          >
+            <div className="w-full max-w-5xl rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row border border-ice-700/30 bg-ink-1/80 backdrop-blur-xl relative z-10">
+              {/* Left Side */}
+              <div className="md:w-5/12 bg-gradient-to-br from-blue-500 to-indigo-600 p-8 md:p-12 text-white flex flex-col justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-white/5 opacity-50 mix-blend-overlay"></div>
+                <div className="relative z-10">
+                  <Reveal>
+                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Let's Chat</h2>
+                  </Reveal>
+                  <Reveal delay={80}>
+                    <p className="text-blue-100 text-lg mb-8 leading-relaxed">
+                      Have a question, project idea, or internship opportunity?
+                    </p>
+                  </Reveal>
+                  <Reveal delay={160}>
+                    <p className="text-blue-100 text-sm leading-relaxed">
+                      Feel free to contact me using the form.<br/>
+                      I'll get back to you as soon as possible.
+                    </p>
+                  </Reveal>
+                </div>
+              </div>
+              
+              {/* Right Side */}
+              <div className="md:w-7/12 p-8 md:p-12">
+                <Reveal delay={240}>
+                  <h3 className="text-2xl font-semibold text-ice-50 mb-8">Contact</h3>
+                </Reveal>
+                <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                  <Reveal delay={300}>
+                    <input 
+                      type="text" 
+                      placeholder="Name" 
+                      className="w-full bg-ice-500/10 border border-ice-500/20 rounded-xl px-4 py-3 text-ice-50 placeholder-ice-400 focus:outline-none focus:border-ice-400 focus:ring-1 focus:ring-ice-400 transition-colors"
+                    />
+                  </Reveal>
+                  <Reveal delay={360}>
+                    <input 
+                      type="email" 
+                      placeholder="Email" 
+                      className="w-full bg-ice-500/10 border border-ice-500/20 rounded-xl px-4 py-3 text-ice-50 placeholder-ice-400 focus:outline-none focus:border-ice-400 focus:ring-1 focus:ring-ice-400 transition-colors"
+                    />
+                  </Reveal>
+                  <Reveal delay={420}>
+                    <input 
+                      type="text" 
+                      placeholder="Subject" 
+                      className="w-full bg-ice-500/10 border border-ice-500/20 rounded-xl px-4 py-3 text-ice-50 placeholder-ice-400 focus:outline-none focus:border-ice-400 focus:ring-1 focus:ring-ice-400 transition-colors"
+                    />
+                  </Reveal>
+                  <Reveal delay={480}>
+                    <textarea 
+                      placeholder="Message" 
+                      rows={4}
+                      className="w-full bg-ice-500/10 border border-ice-500/20 rounded-xl px-4 py-3 text-ice-50 placeholder-ice-400 focus:outline-none focus:border-ice-400 focus:ring-1 focus:ring-ice-400 transition-colors resize-none"
+                    ></textarea>
+                  </Reveal>
+                  <Reveal delay={540}>
+                    <button 
+                      type="submit" 
+                      className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 rounded-xl transition-colors shadow-[0_0_15px_rgba(59,130,246,0.5)] mt-2"
+                    >
+                      Submit
+                    </button>
+                  </Reveal>
+                </form>
+                
+                <Reveal delay={600}>
+                  <div className="mt-10 flex justify-center gap-4">
+                    <CopyEmail email={EMAIL} className="frost-icon !rounded-full">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg>
+                    </CopyEmail>
+                    <a href="https://github.com/janarth-24" target="_blank" rel="noopener noreferrer" className="frost-icon !rounded-full">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/janarthanan-p-/" target="_blank" rel="noopener noreferrer" className="frost-icon !rounded-full">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
+                    </a>
+                  </div>
+                </Reveal>
+              </div>
+            </div>
           </section>
         </main>
 
@@ -723,7 +1030,9 @@ export default function Home() {
           project={activeProject}
           onClose={() => setActiveProject(null)}
         />
+        <SectionNav />
       </div>
     </SmoothScroll>
+    </>
   );
 }

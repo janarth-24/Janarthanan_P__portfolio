@@ -5,8 +5,8 @@
 // project tiny and makes the strings easy to audit.
 export type Lang = "es" | "en";
 
-export const LANGUAGES: Lang[] = ["es", "en"];
-export const DEFAULT_LANG: Lang = "es";
+export const LANGUAGES: Lang[] = ["en"];
+export const DEFAULT_LANG: Lang = "en";
 
 type Leaf = Record<Lang, string>;
 type Node = Leaf | { [key: string]: Node };
@@ -29,8 +29,11 @@ export const DICT = {
   nav: {
     aria: { es: "Secciones", en: "Sections" },
     home: { es: "Inicio", en: "Home" },
+    about: { es: "Sobre mí", en: "About me" },
     stack: { es: "Stack", en: "Stack" },
     experience: { es: "Experiencia", en: "Experience" },
+    education: { es: "Educación", en: "Education" },
+    publications: { es: "Publicaciones", en: "Publications" },
     project: { es: "Proyecto", en: "Project" },
     contact: { es: "Contacto", en: "Contact" },
   },
@@ -43,12 +46,12 @@ export const DICT = {
   hero: {
     greeting: { es: "Hola, soy", en: "Hi, I am" },
     roleLine: {
-      es: "Software Engineer & Tech Lead.",
-      en: "Software Engineer & Tech Lead.",
+      es: "Software Developer • Full Stack • Flutter.",
+      en: "Software Developer • Full Stack • Flutter.",
     },
     tagline: {
-      es: "Especializado en ERPs y aplicaciones full-stack para empresas.",
-      en: "Specialised in ERPs and full-stack apps for businesses.",
+      es: "Especializado en aplicaciones frontend, backend y Flutter.",
+      en: "Specialized in frontend, backend, and Flutter apps.",
     },
     cv: { es: "Descargar CV", en: "Download CV" },
     hire: { es: "Contactarme", en: "Contact me" },
@@ -56,6 +59,29 @@ export const DICT = {
     keysHint: {
       es: "· hover sobre las teclas",
       en: "· hover over the keys",
+    },
+  },
+  about: {
+    title: { es: "About me", en: "About me" },
+    subtitle: {
+      es: "Un poco sobre quién soy.",
+      en: "A little bit about who I am.",
+    },
+    body1: {
+      es: "I am Janarthanan, a Pre-final Year Computer Science and Engineering student currently pursuing my Bachelor’s degree at Annai Mira College of Engineering and Technology, Vellore.",
+      en: "I am Janarthanan, a Pre-final Year Computer Science and Engineering student currently pursuing my Bachelor’s degree at Annai Mira College of Engineering and Technology, Vellore.",
+    },
+    body2: {
+      es: "I specialize in Frontend Development and work as a Freelance Frontend Developer, building responsive, visually appealing, and user-friendly web interfaces using HTML, CSS, JavaScript, and Bootstrap.",
+      en: "I specialize in Frontend Development and work as a Freelance Frontend Developer, building responsive, visually appealing, and user-friendly web interfaces using HTML, CSS, JavaScript, and Bootstrap.",
+    },
+    body3: {
+      es: "I also have working knowledge of Python, SQL, and Data Structures & Algorithms, which helps me write efficient, optimized, and scalable code and apply strong problem-solving techniques.",
+      en: "I also have working knowledge of Python, SQL, and Data Structures & Algorithms, which helps me write efficient, optimized, and scalable code and apply strong problem-solving techniques.",
+    },
+    body4: {
+      es: "As a final year student, I am actively seeking internship opportunities and freelance projects to gain hands-on industry experience and grow as a professional software developer.",
+      en: "As a final year student, I am actively seeking internship opportunities and freelance projects to gain hands-on industry experience and grow as a professional software developer.",
     },
   },
   stack: {
@@ -74,6 +100,21 @@ export const DICT = {
     subtitle: {
       es: "Mi trayectoria profesional.",
       en: "My professional journey.",
+    },
+    certificate: { es: "Ver Certificado", en: "View Certificate" },
+  },
+  education: {
+    title: { es: "Education", en: "Education" },
+    subtitle: {
+      es: "Mi formación académica.",
+      en: "My academic background.",
+    },
+  },
+  publications: {
+    title: { es: "Publications", en: "Publications" },
+    subtitle: {
+      es: "Mis artículos publicados.",
+      en: "My published papers.",
     },
   },
   projects: {
@@ -98,71 +139,71 @@ export const DICT = {
     linkedin: { es: "LinkedIn", en: "LinkedIn" },
     emailToast: { es: "Email copiado", en: "Email copied" },
     footer: {
-      es: "© 2026 Txema Albero. Todos los derechos reservados.",
-      en: "© 2026 Txema Albero. All rights reserved.",
+      es: "© 2026 Janarthanan. Todos los derechos reservados.",
+      en: "© 2026 Janarthanan. All rights reserved.",
     },
   },
   keyboard: {
     taglines: {
       javascript: {
-        es: "Donde empezó todo. Sigue aquí, sigue mandando.",
-        en: "Where it all started. Still here, still in charge.",
-      },
-      typescript: {
-        es: "Mismo JS, con cinturón de seguridad.",
-        en: "Same JS, with a seatbelt.",
+        es: "El lenguaje de la web interactiva.",
+        en: "The language of the interactive web.",
       },
       html5: {
-        es: "Los huesos de cualquier página.",
-        en: "The bones of any page.",
+        es: "Los cimientos de cualquier página.",
+        en: "The foundation of any web page.",
       },
       css: {
-        es: "El detalle que separa lo bueno de lo bonito.",
-        en: "What separates good from beautiful.",
-      },
-      tailwindcss: {
-        es: "Utility-first. Diseño en el HTML.",
-        en: "Utility-first. Design inside the HTML.",
+        es: "El diseño y estilo que le da vida.",
+        en: "The design and styling that brings it to life.",
       },
       python: {
-        es: "Se lee como inglés, escala como cohete.",
-        en: "Reads like English, scales like a rocket.",
+        es: "Simple, legible y poderoso para IA.",
+        en: "Simple, readable, and powerful for AI.",
+      },
+      cplusplus: {
+        es: "Rendimiento y control a bajo nivel.",
+        en: "High performance and low-level control.",
       },
       react: {
-        es: "Componentes, componentes, componentes.",
-        en: "Components, components, components.",
+        es: "Componentes dinámicos e interfaces rápidas.",
+        en: "Dynamic components and fast interfaces.",
       },
-      nextdotjs: {
-        es: "React adulto: routing, SSR, edge.",
-        en: "React all grown up: routing, SSR, edge.",
+      flutter: {
+        es: "Desarrollo móvil multiplataforma hermoso.",
+        en: "Beautiful cross-platform mobile development.",
       },
-      vuedotjs: {
-        es: "El frontend más relajado.",
-        en: "The most relaxed frontend.",
+      dart: {
+        es: "El motor detrás de las apps de Flutter.",
+        en: "The engine driving Flutter apps.",
       },
-      nodedotjs: {
-        es: "JavaScript en el servidor.",
-        en: "JavaScript on the server.",
+      firebase: {
+        es: "Backend rápido y servicios en tiempo real.",
+        en: "Fast backend and real-time services.",
       },
-      php: {
-        es: "Mueve más web de la que crees.",
-        en: "Runs more of the web than you think.",
+      supabase: {
+        es: "La alternativa open source de Firebase con SQL.",
+        en: "The open source Firebase alternative with SQL.",
       },
-      odoo: {
-        es: "ERP que no hace llorar.",
-        en: "ERP that doesn't make you cry.",
+      c: {
+        es: "La base de los sistemas modernos.",
+        en: "The foundation of modern systems.",
       },
-      postgresql: {
-        es: "La base de datos aburrida que siempre funciona.",
-        en: "The boring database that always works.",
+      sqlite: {
+        es: "Bases de datos ligeras y embebidas.",
+        en: "Lightweight embedded databases.",
       },
-      docker: {
-        es: "Igual en mi máquina, igual en producción.",
-        en: "Same on my machine, same in production.",
+      mysql: {
+        es: "Gestión de bases de datos relacionales.",
+        en: "Relational database management.",
       },
       git: {
-        es: "Historia y máquina del tiempo del código.",
-        en: "History and a time machine for your code.",
+        es: "Control de versiones y trabajo en equipo.",
+        en: "Version control and teamwork.",
+      },
+      github: {
+        es: "Donde el código abierto vive y colabora.",
+        en: "Where open source lives and collaborates.",
       },
     },
   },
@@ -177,6 +218,6 @@ export function translate(path: string, lang: Lang): string {
     ref = (ref as { [key: string]: Node })[p];
     if (ref === undefined) return path;
   }
-  if (isLeaf(ref)) return ref[lang] ?? ref.es ?? path;
+  if (isLeaf(ref)) return ref.en ?? path;
   return path;
 }

@@ -44,6 +44,15 @@ const SECTION_STATES: Record<string, KeyboardState> = {
     posZ: 0,
     scale: 1,
   },
+  about: {
+    yaw: Math.PI * 0.25,
+    pitch: Math.PI * 0.12,
+    roll: 0.05,
+    posX: 1.2,
+    posY: 0.1,
+    posZ: 0,
+    scale: 0.9,
+  },
   stack: {
     // Naresh's reference: keyboard lives in the lower-right, moderate
     // isometric tilt — enough yaw to show the left face but not so much
@@ -105,6 +114,24 @@ const SECTION_STATES: Record<string, KeyboardState> = {
     posY: 0.05,
     posZ: 0,
     scale: 0.95,
+  },
+  education: {
+    yaw: Math.PI * 0.35,
+    pitch: Math.PI * 0.1,
+    roll: -0.05,
+    posX: 0,
+    posY: 0.1,
+    posZ: 0,
+    scale: 0.9,
+  },
+  publications: {
+    yaw: Math.PI * 0.25,
+    pitch: Math.PI * 0.05,
+    roll: 0,
+    posX: -1.2,
+    posY: 0.05,
+    posZ: 0,
+    scale: 0.85,
   },
   // Contact — mirrors the hero pose (same yaw/pitch/roll and scale) but
   // pushed to the right so the "¿Hablamos?" copy can sit on the left. The
