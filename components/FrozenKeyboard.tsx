@@ -456,14 +456,11 @@ function Keycap({
   // Each key gets its own random frequency + phase, stable across re-renders
   // so every keycap's random bob feels independent (no synchronised wave).
   // Sampled once at mount.
-  const randomBob = useMemo(
-    () => ({
-      freq: 0.6 + Math.random() * 0.6, // 0.6..1.2 Hz-ish
-      phase: Math.random() * Math.PI * 2,
-      threshold: 0.45 + Math.random() * 0.2, // 0.45..0.65 — higher = rarer pop
-    }),
-    []
-  );
+  const [randomBob] = useState(() => ({
+    freq: 0.6 + Math.random() * 0.6, // 0.6..1.2 Hz-ish
+    phase: Math.random() * Math.PI * 2,
+    threshold: 0.45 + Math.random() * 0.2, // 0.45..0.65 — higher = rarer pop
+  }));
 
   const iconTexture = useMemo(
     () => makeIconTexture(icon.path, `#${icon.hex}`),

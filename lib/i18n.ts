@@ -5,7 +5,7 @@
 // project tiny and makes the strings easy to audit.
 export type Lang = "es" | "en";
 
-export const LANGUAGES: Lang[] = ["en"];
+export const LANGUAGES: Lang[] = ["en", "es"];
 export const DEFAULT_LANG: Lang = "en";
 
 type Leaf = Record<Lang, string>;
@@ -218,6 +218,6 @@ export function translate(path: string, lang: Lang): string {
     ref = (ref as { [key: string]: Node })[p];
     if (ref === undefined) return path;
   }
-  if (isLeaf(ref)) return ref.en ?? path;
+  if (isLeaf(ref)) return ref[lang] ?? path;
   return path;
 }

@@ -273,7 +273,7 @@ const publications: Array<{
 ];
 
 function pick<T>(loc: { es: T; en: T }, lang: Lang): T {
-  return loc.en;
+  return loc[lang];
 }
 
 // Hero name split per word so each can rise independently. Whitespace
@@ -298,7 +298,7 @@ export default function Home() {
   const { t, lang } = useLanguage();
   const isMobile = useIsMobile();
   const [activeProject, setActiveProject] = useState<Project | null>(null);
-  const [loadingComplete, setLoadingComplete] = useState(false);
+  const [, setLoadingComplete] = useState(false);
 
   return (
     <>
@@ -501,6 +501,7 @@ export default function Home() {
               <Reveal delay={240} className="flex-none">
                 <div className="relative w-56 sm:w-64 md:w-72 lg:w-80 aspect-[3/4] rounded-2xl overflow-hidden border-2 border-ice-700/30 shadow-[0_0_40px_rgba(234,242,251,0.1)] pointer-events-auto group">
                   <div className="absolute inset-0 bg-ice-500/20 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500 z-10"></div>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/profile.png"
                     alt="Janarthanan P"
@@ -948,7 +949,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-white/5 opacity-50 mix-blend-overlay"></div>
                 <div className="relative z-10">
                   <Reveal>
-                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Let's Chat</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Let&apos;s Chat</h2>
                   </Reveal>
                   <Reveal delay={80}>
                     <p className="text-blue-100 text-lg mb-8 leading-relaxed">
@@ -958,7 +959,7 @@ export default function Home() {
                   <Reveal delay={160}>
                     <p className="text-blue-100 text-sm leading-relaxed">
                       Feel free to contact me using the form.<br/>
-                      I'll get back to you as soon as possible.
+                      I&apos;ll get back to you as soon as possible.
                     </p>
                   </Reveal>
                 </div>
