@@ -389,7 +389,7 @@ export default function Home() {
                 style={{ ["--d" as string]: "700ms" }}
               >
                 <a
-                  href={lang === "en" ? "/cv_en.pdf" : "/cv.pdf"}
+                  href={lang === "en" ? "./cv_en.pdf" : "./cv.pdf"}
                   target="_blank"
                   rel="noopener noreferrer"
                   data-cursor="hover"
@@ -503,7 +503,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-ice-500/20 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500 z-10"></div>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/profile.png"
+                    src="./profile.png"
                     alt="Janarthanan P"
                     className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
                   />
