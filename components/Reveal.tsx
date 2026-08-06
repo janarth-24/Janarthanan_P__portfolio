@@ -79,10 +79,15 @@ export default function Reveal({
     ["--reveal-from" as string]: axis[direction],
   };
 
+  const Component = Tag;
   return (
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    <Tag ref={ref as any} className={`reveal ${className}`.trim()} style={style}>
+    <Component
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ref={ref as any}
+      className={`reveal ${className}`.trim()}
+      style={style}
+    >
       {children}
-    </Tag>
+    </Component>
   );
 }
