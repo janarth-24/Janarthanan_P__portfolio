@@ -79,7 +79,8 @@ export default function Reveal({
     ["--reveal-from" as string]: axis[direction],
   };
 
-  const Component = Tag;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const Component = Tag as any;
   return (
     <Component
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
